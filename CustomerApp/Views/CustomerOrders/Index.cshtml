@@ -1,0 +1,19 @@
+﻿<!-- Views/CustomerOrders klasörü altında bir Index.cshtml adlı view oluşturun. -->
+
+<!-- Bu view, CustomerOrderViewModel kullanarak müşteri bilgilerini ve siparişleri gösterecek. -->
+@model CustomerOrderViewModel
+
+<h1>Siparişler</h1>
+<hr />
+
+<ul>
+    <li>
+        @Model.Customer.Id - @Model.Customer.FirstName @Model.Customer.LastName - @Model.Customer.Email
+        <ul>
+            @foreach(var order in Model.Orders)
+            {
+                <li>@order.Id - @order.Name - @order.Price - @order.Quantity</li>
+            }
+        </ul>
+    </li>
+</ul>
